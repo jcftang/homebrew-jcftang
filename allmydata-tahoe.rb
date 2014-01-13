@@ -98,7 +98,8 @@ class AllmydataTahoe < Formula
     resource('nevow').stage { system "python", *install_args }
     resource('simplejson').stage { system "python", *install_args }
 
-    system "python", "setup.py", "test", "-s", "allmydata"
+    #run tests -- for debugging failures
+    #system "python", "setup.py", "test", "-s", "allmydata"
     system "python", "setup.py", "install",  "--prefix=#{prefix}"
 
     bin.env_script_all_files(libexec+'bin', :PYTHONPATH => ENV['PYTHONPATH'])
